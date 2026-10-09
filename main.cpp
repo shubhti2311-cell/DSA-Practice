@@ -1,4 +1,26 @@
-
+#include <iostream>
+using namespace std;
+struct node
+{
+    int data;
+    node *next;
+};
+node* deletefromEnd(node* head){
+    if (head==NULL)
+    {
+        cout<<"empty "
+    }
+    
+    node* temp=head;
+   while (temp->next->next!=NULL)
+   {
+    temp=temp->next;
+   }
+   node* del=temp->next;
+   temp->next->next=temp->next;
+   delete head;
+    return head;
+}
 // node* insertAtPosition(node* head, int value, int position){
 //     node* member= new node();
 //     member->data=value;
