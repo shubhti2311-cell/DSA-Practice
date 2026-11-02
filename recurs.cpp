@@ -1,74 +1,28 @@
 #include <iostream>
 using namespace std;
-// int sum(int n){if (n==0)
-// {
-//     return 0;
-// }
-// return n+sum(n-1);
-// };
-int power(int x, int n)
+int arraySum(int a[],int n,int i){
+if (i==n)
 {
-    if (n == 0)
-    {
-        return 1;
-    }
-    return x * power(x, n - 1);
-};
-int fibo(int n)
-{
-    if (n == 0)
-    {
-        return 0;
-    }
-    if (n == 1)
-        return 1;
-
-    return fibo(n - 1) + fibo(n - 2);
-};
-
-int digi(int n)
-{
-    if (n == 0)
-    {
-        return 0;
-    }
-
-    // return n%10+digi(n/10);
-    return 1 + digi(n / 10);
+   return 0;
 }
-int sum(int n)
-{
-    if (n == 0)
-    {
-        return 0;
-    }
-    return n % 10 + sum(n / 10);
+return a[i]+arraySum(a,n,i+1);
 };
-int reverse(int n,int rev=0)
-{
+// int maxElem(int a[],int n,int i,){
     
-int original=n;
-    if (n==0)
-    {
-       if (rev==original)
-       {
-        return true;
-       }else{
-        return false;
-       }
-       
-    }
-     rev=rev*10+n%10;
-   
-    reverse(n/10,rev)  ;
-}
-int main()
-{
-    // cout << "the sum " << sum(3) << endl;
-    // cout << power(2, 5) << endl;
-    // cout << power(3, 3) << endl;
-    // cout << "The Sum of digits of 21345 is " << sum(21345);
-    cout<<"the reverse of 1234 is "<<reverse(1234);
+//     if(a[i]>max){
+//         max=a[i];
+//     }
+//     if(i==n){
+//         return max;
+//     }
+//     return maxElem(a,n,i+1);
+
+// }
+
+int main() {
+    int a[]={1,2,3,4,5,6,7};
+  cout<<"the sum of an array a ="<<  arraySum(a,7,0);
+//   cout<<"the maximum element of an array = "<<maxElem(a,7,0);
     return 0;
 }
 
