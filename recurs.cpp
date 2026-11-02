@@ -19,10 +19,25 @@ int linearSearch(int a[],int n,int target,int i){
     }
     return linearSearch(a,n,target,i+1);
 }
+int BinSearch(int a[],int l,int h,int target){
+   
+    if(l>h){
+        return -1;
+    }
+     int mid=l+(h-l)/2;
+if(a[mid]==target){
+    return mid;
+}
+if(a[mid]>target){
+    return BinSearch(a,l,mid-1,target);
+}else{
+     return BinSearch(a,mid+1,h,target);
+}
+
+}
 int main() {
     int a[]={1,2,3,4,5,6,7};
- 
-cout<<linearSearch(a,7,5,0);
+cout<<BinSearch(a,0,6,4);
     return 0;
 }
 
