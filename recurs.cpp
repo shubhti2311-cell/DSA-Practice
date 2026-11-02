@@ -35,6 +35,18 @@ if(a[mid]>target){
 }
 
 }
+int reverseArr(int a[],int n,int i){
+    if (i>=n)
+    {
+       return ;
+
+    }
+    int temp;
+    temp=a[i];
+    a[i]=a[n];
+    a[n]=temp;
+    return reverseArr(a,n-1,i+1);
+}
 int main() {
     int a[]={1,2,3,4,5,6,7};
 cout<<BinSearch(a,0,6,4);
