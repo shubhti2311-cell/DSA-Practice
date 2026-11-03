@@ -1,29 +1,39 @@
 #include <iostream>
 using namespace std;
+void movezeros(int a[], int n)
+{
+    int first = 0, sec = 1, temp;
+    while (sec != n )
+    {
+       
+        if (a[first]==0)
+        {
+            temp = a[first];
+            a[first] = a[sec];
+            a[sec] = temp;
+             first++;
+             sec++;
+        }
+        else if(a[first]==0&& a[sec]==0){
+           sec++;
+
+        }
+        
+        
+       
+    }
+    int i = 0;
+    while (i != n)
+    {
+        cout << a[i] << " ";
+        i++;
+    }
+}
 
 int main()
 {
-    int n = 6;
-    int a[n] = {1, 2, 3, 5, 6, 7};
-    int target = 12;
-    int left = 0, right = n - 1;
-    while (left < right)
-    {
-        if (a[left] + a[right] == target)
-        {
-            cout << "left = " << left << endl
-                 << "right = " << right << endl;
-            break;
-        }
-        if (a[left] + a[right] > target)
-        {
-            right--;
-        }
-        else
-        {
-            left++;
-        }
-    }
-
+    int n = 5;
+    int b[n] ={1, 2, 0, 3, 0};
+    movezeros(b, n);
     return 0;
 }
